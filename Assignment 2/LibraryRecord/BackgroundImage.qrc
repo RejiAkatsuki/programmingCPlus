@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>inori_zirong_chibi.jpg</file>
+        <file>inori_zirong_desktop.jpg</file>
+        <file>inori_zirong_streets.jpg</file>
+        <file>inori_zirong_touch_the_web.jpg</file>
+        <file>White-Wallpapers.jpg</file>
+        <file>greenBackGround.jpg</file>
+        <file>221655.jpg</file>
+        <file>39647357.jpg</file>
+    </qresource>
+</RCC>

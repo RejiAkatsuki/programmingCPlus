@@ -1,0 +1,65 @@
+<b>Assignment 2</b><br/>
+COSC 2131 Programming with C++<br />
+<b>Title of the program</b>: Library Record<br />
+<b>Title of the Assignment</b>: Assignment 2<br />
+<b>Assignment number</b>: 2<br />
+<b>Lecturer</b>: Mr. Ashok Kumar Veerasamy<br />
+<b>Date Due</b>: December 24th 2013<br />
+<b>Group member</b>:<br/>
+S3372794 Nguyen Manh Khoi<br/>
+S3342133 Phan Thanh San<br />
+<br />
+<br />
+<b>Introduction:</b><br/>
+This report is about the development of the program Library Record.The program is developed for librarian for keep track of the library's multimedia collection and it's service system.<br />
+<br />
+<br />
+<b>How To Run:</b><br/> 
+The Qmake support the auto generate of make file for the program, thus simplify the process of makefile. To run the program simply follow the following step:<br />
+- install Qt Creator: check the following link for more information URL<http://qt-project.org/downloads><br />
+- after successful install Qt creator, simply run Qt Creator<br />
+- choose open project then select LibraryRecord.pro in folder LibraryRecord. <br />
+- after that Simply press RUN button in the lower left corner of your screen.<br />
+
+Note: This program support multiple platform including Mac OS, Linux and Window. the process of installation is similar in any platform. <br/>
+<br />
+<br />
+<b>Source code:</b><br/>
+The source code of the program is stored inside the folder call LibraryRecord which contain all neccessary file to run the program.<br />
+<br />
+<br />
+<b>Implemented C++ feature:</b><br/>
+The program implemeted C++ feature to better its perfomance. Qt project provide a comfortable way to impletement C++ and used it to develop a useable GUI for the program.<br />
+- toInt() which is used in the algorithm for calculating late return date of borrower. Qt project provide a flexible way to implement this feature into the program.without the use of toInt(), it would be difficult to calculate the late return date which used to determine if the borrwer return the item late or not.<br />
+- toInt() is used to change data stored in database with type string to Integer type which is used to determine the neccessary location of the data to fetch and display in correct table collumn<br />
+- compare() is used for comparision between 2 string which is used to determine if the user want to show the overdue or not. this is implemented inside the program as a filterfunction incase user want to check the overdue of the borrower.<br />
+- Qt provide an easy way to read and write file to export report for librarian. this is found in the main window of the program as the feature is implemented in thegenerate report button. Qfile and QTextstream was used in this case since they are standard library of Qt project and support c++ function.<br />
+<br />
+<br />
+<b>Algorithm:</b><br/>
+one of the algorithm which used in the program is the due date calculation. The idea is simple: by taking the day an item is borrowed and take in consider of how many days the item is allowed to be borrow. then compare it with the return day of the item to determine whether the item is late return or not. <br />
+<br />
+<br />
+<b>Data Structure:</b><br/>
+At first the program is developed with the intention of using List as a container for data.<br />
+However, this was removed and replaced by using a direct access to the SQL lite database via Qt object.<br />
+By doing so, the program would run more faster and more efficent since changes of data will conflict if applied into a multiple connection client-server network. <br />
+If the program does not have direct access to the database, this means the program will have to store and access data through the container-which is located in client, before updating it to server. <br />
+This could cost major conflict of data which might lead to server crash. <br />
+Moreover, SQL Lite provide a safe and reliable way to connect to database which have reduce the change of lost connection between database and client.<br />
+This provide an improvementin program perfomance and flexiblity. Thus, the program is developed with the direct access to SQL Lite database. <br />
+Any function of performance such as display collection, store record borrower will be save to the database in order to update the latest change in database record.<br />
+<br />
+<br />
+<b>External feature</b>
+The program allow user to add picture from any location of their computer as an icon for a collection.<br/>
+
+<br />
+<br />
+<b>Reference:</b><br />
+-QT Project Hosting, Qt Project , viewed December 12th 2013, URL &lt;http://qt-project.org/&gt; <br />
+-Flavio Ferreira, How to Read and WRite in XML Files with Qt/C++, October 29th 2010, Viewed December 12th 2013, URL &lt;http://community.embeddedlab.org/technical-articles/qt/qt-posts/howtoreadandwriteinxmlfileswithqtc&gt;<br />
+-QtBros61, Writing to a Text-file, Qt Center, April 7th 2010, Viewed December 14th 2013, URl&lt;http://www.qtcentre.org/threads/29622-writing-to-a-text-file&gt;<br />
+-Stack Overflow, How to display an Image, StackOverflow, Viewed December 15th 2013, URL&lt;http://stackoverflow.com/questions/11980274/first-time-using-qt-how-to-display-an-image&gt;<br />
+-pmlz, How to highlight a row, Qt project, April 4th 2013, viewed December 15th 2013, URL&lt;http://qt-project.org/forums/viewthread/16032&gt;<br />
+-Zl2k, How to Brose image in thumbnail view, Qt center, September 2nd 2008, Viewed December 15th 2013, URl&lt;http://www.qtcentre.org/threads/15739-how-to-browse-images-in-thumbnail-view&gt;<br/>
